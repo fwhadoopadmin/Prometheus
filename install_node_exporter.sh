@@ -103,6 +103,7 @@ chown node_exporter:node_exporter /usr/local/bin/node_exporter*
 chown -R node_exporter:node_exporter    /etc/systemd/system/node_exporter.service
 chown -R node_exporter:node_exporter /usr/sbin/node_exporter
 echo " REloading systemd services --> "
+firewall-cmd --zone=public --add-port=9100/tcp --permanent; firewall-cmd --reload
 
 #sudo systemctl daemon-reload; sudo systemctl start node_exporter; Sudo systemctl status node_exporter; sudo systemctl enable node_exporter
 
