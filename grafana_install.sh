@@ -10,7 +10,10 @@ eval $filename && \
 sudo yum install ${grafanazip} && \
 #grafana-enterprise-8.1.2-1.x86_64.rpm && \
 
-systemctl enable grafana-server; systemctl start grafana-server; systemctl status grafana-server
+echo "Enable firewall ---> "
+sudo firewall-cmd --zone=public --add-port=3000/tcp --permanent;firewall-cmd --reload 
+
+sudo systemctl enable grafana-server; sudo systemctl start grafana-server; sudo systemctl status grafana-server
 
 echo " Grafana Install Completed!!"
 
