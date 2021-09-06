@@ -4,5 +4,5 @@ global:
 scrape_configs:
 - job_name: node
   static_configs:
-  - targets: ['192.168.41.144:9100']
+  - targets: ['localhost:9100']
   #- targets: [‘localhost:9090’, ‘localhost:9100’]
